@@ -1,11 +1,11 @@
-import React from "react";
-import ShelfSvg from "../assets/icons/bookshelf.svg";
-import RoutineSvg from "../assets/icons/face-woman-shimmer-outline.svg";
-import HomeSvg from "../assets/icons/home-sharp.svg";
-import ProfileSvg from "../assets/icons/person-circle-outline.svg";
-import SearchSvg from "../assets/icons/search-sharp.svg";
-import { SvgProps } from "react-native-svg";
-import { ViewStyle } from "react-native";
+import React from 'react';
+import ShelfSvg from '../assets/icons/bookshelf.svg';
+import RoutineSvg from '../assets/icons/face-woman-shimmer-outline.svg';
+import HomeSvg from '../assets/icons/home-sharp.svg';
+import ProfileSvg from '../assets/icons/person-circle-outline.svg';
+import SearchSvg from '../assets/icons/search-sharp.svg';
+import {SvgProps} from 'react-native-svg';
+import {ViewStyle} from 'react-native';
 
 export enum IconName {
   Home,
@@ -20,7 +20,7 @@ interface StyledIconProps extends SvgProps {
   name: IconName;
 }
 
-export const StyledIcon = ({ name, color, ...props }: StyledIconProps) => {
+export const StyledIcon = ({name, color, ...props}: StyledIconProps) => {
   const iconMap = {
     [IconName.Home]: HomeSvg,
     [IconName.Search]: SearchSvg,
@@ -34,7 +34,7 @@ export const StyledIcon = ({ name, color, ...props }: StyledIconProps) => {
     <IconComponent
       {...props}
       fill={color}
-      style={{ color: color } as ViewStyle}
+      style={{color: color} as ViewStyle}
     />
   );
 };
