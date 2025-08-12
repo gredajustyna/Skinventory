@@ -8,11 +8,11 @@ import {SvgProps} from 'react-native-svg';
 import {ViewStyle} from 'react-native';
 
 export enum IconName {
-  Home,
-  Search,
-  Routine,
-  Shelf,
-  Profile,
+  Home = 'Home',
+  Search = 'Search',
+  Routine = 'Routine',
+  Shelf = 'Shelf',
+  Profile = 'Profile',
 }
 
 interface StyledIconProps extends SvgProps {
