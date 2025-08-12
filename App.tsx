@@ -5,13 +5,27 @@ import {RoutineScreen} from './screens/RoutineScreen';
 import {SearchScreen} from './screens/SearchScreen';
 import {ShelfScreen} from './screens/ShelfScreen';
 import {NavigationContainer} from '@react-navigation/native';
+import {Colors} from './constants/Colors';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 25,
+            left: 20,
+            right: 20,
+            height: 90,
+            backgroundColor: Colors.primary,
+            borderRadius: 15,
+            elevation: 0,
+          },
+        }}>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Search" component={SearchScreen} />
         <Tab.Screen name="Routine" component={RoutineScreen} />
