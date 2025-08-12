@@ -8,9 +8,9 @@ name: Lint Code Base
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
   pull_request:
-    branches: ['main']
+    branches: ["main"]
 jobs:
   prettier:
     runs-on: ubuntu-latest
@@ -21,10 +21,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: 'Install dependencies'
+      - name: "Install dependencies"
         run: npm install
-      - name: 'Verify with prettier'
-        run: 'npm run prettier'
+      - name: "Verify with prettier"
+        run: "npm run prettier"
 
   eslint:
     runs-on: ubuntu-latest
@@ -35,14 +35,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: 'Install dependencies'
+      - name: "Install dependencies"
         run: npm install
-      - name: 'Verify with ESlint'
-        run: 'npm run lint'
+      - name: "Verify with ESLint"
+        run: "npm run lint"
 
   typescript:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: 🏗 Setup repo
         uses: actions/checkout@v4
 
