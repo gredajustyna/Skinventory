@@ -1,6 +1,4 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View} from 'react-native';
 import {HomeScreen} from './screens/HomeScreen';
 import {ProfileScreen} from './screens/ProfileScreen';
 import {RoutineScreen} from './screens/RoutineScreen';
@@ -23,12 +21,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
