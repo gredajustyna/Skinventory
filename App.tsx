@@ -6,10 +6,41 @@ import {SearchScreen} from './screens/SearchScreen';
 import {ShelfScreen} from './screens/ShelfScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {Colors} from './constants/Colors';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {IconName, StyledIcon} from './components/CustomIcon';
+import {GestureResponderEvent} from 'react-native';
 
 const Tab = createBottomTabNavigator();
+
+interface RoutineButtonProps {
+  children: React.ReactNode;
+  onPress?: (event: GestureResponderEvent) => void;
+}
+
+const RoutineButton: React.FC<RoutineButtonProps> = ({children, onPress}) => {
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={{
+        top: -20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        ...styles.shadow,
+      }}>
+      <View
+        style={{
+          width: 70,
+          height: 70,
+          borderRadius: 35,
+          backgroundColor: Colors.accent,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        {children}
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 export default function App() {
   return (
@@ -17,6 +48,8 @@ export default function App() {
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
+          tabBarActiveTintColor: Colors.accent,
+          tabBarInactiveTintColor: Colors.background,
           tabBarStyle: {
             position: 'absolute',
             bottom: 25,
@@ -25,6 +58,7 @@ export default function App() {
             height: 70,
             marginRight: 20,
             marginLeft: 20,
+            paddingTop: 10,
             backgroundColor: Colors.primary,
             borderRadius: 15,
             ...styles.shadow,
@@ -35,14 +69,72 @@ export default function App() {
           component={HomeScreen}
           options={{
             tabBarIcon: ({color}) => (
-              <StyledIcon name={IconName.Home} color={color} />
+              <StyledIcon
+                name={IconName.Home}
+                color={color}
+                width={30}
+                height={30}
+              />
             ),
           }}
         />
-        <Tab.Screen name="Search" component={SearchScreen} />
-        <Tab.Screen name="Routine" component={RoutineScreen} />
-        <Tab.Screen name="Shelf" component={ShelfScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen
+          name="Search"
+          component={SearchScreen}
+          options={{
+            tabBarIcon: ({color}) => (
+              <StyledIcon
+                name={IconName.Search}
+                color={color}
+                width={30}
+                height={30}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Routine"
+          component={RoutineScreen}
+          options={{
+            tabBarIcon: ({color, focused}) => (
+              <StyledIcon
+                name={IconName.Routine}
+                color={color}
+                width={30}
+                height={30}
+              />
+            ),
+            tabBarButton: props => <RoutineButton {...props} />,
+          }}
+        />
+        <Tab.Screen
+          name="Shelf"
+          component={ShelfScreen}
+          options={{
+            tabBarIcon: ({color}) => (
+              <StyledIcon
+                name={IconName.Shelf}
+                color={color}
+                width={30}
+                height={30}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarIcon: ({color}) => (
+              <StyledIcon
+                name={IconName.Profile}
+                color={color}
+                width={30}
+                height={30}
+              />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
