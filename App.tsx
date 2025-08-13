@@ -50,6 +50,7 @@ export default function App() {
           headerShown: false,
           tabBarActiveTintColor: Colors.accent,
           tabBarInactiveTintColor: Colors.background,
+          tabBarShowLabel: false,
           tabBarStyle: {
             position: 'absolute',
             bottom: 25,
@@ -58,7 +59,7 @@ export default function App() {
             height: 70,
             marginRight: 20,
             marginLeft: 20,
-            paddingTop: 10,
+            paddingTop: 15,
             backgroundColor: Colors.primary,
             borderRadius: 15,
             ...styles.shadow,
