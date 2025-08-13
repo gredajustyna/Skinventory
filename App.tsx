@@ -8,13 +8,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {Colors} from './constants/Colors';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {IconName, StyledIcon} from './components/CustomIcon';
-import {GestureResponderEvent} from 'react-native';
+import type {TouchableOpacityProps} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 interface RoutineButtonProps {
   children: React.ReactNode;
-  onPress?: (event: GestureResponderEvent) => void;
+  onPress?: TouchableOpacityProps['onPress'];
 }
 
 const RoutineButton: React.FC<RoutineButtonProps> = ({children, onPress}) => {
@@ -96,7 +96,7 @@ export default function App() {
           name="Routine"
           component={RoutineScreen}
           options={{
-            tabBarIcon: ({color, focused}) => (
+            tabBarIcon: ({color}) => (
               <StyledIcon
                 name={IconName.Routine}
                 color={color}
