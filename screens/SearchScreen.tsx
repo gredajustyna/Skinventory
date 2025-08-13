@@ -1,5 +1,10 @@
 import React from 'react';
+import {View, Text} from 'react-native';
 
 export const SearchScreen = () => {
-  return <div>SearchScreen</div>;
+  return (
+    <View>
+      <Text>SearchScreen</Text>
+    </View>
+  );
 };

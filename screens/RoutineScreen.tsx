@@ -1,5 +1,10 @@
 import React from 'react';
+import {View, Text} from 'react-native';
 
 export const RoutineScreen = () => {
-  return <div>RoutineScreen</div>;
+  return (
+    <View>
+      <Text>RoutineScreen</Text>
+    </View>
+  );
 };
