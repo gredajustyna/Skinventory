@@ -1,4 +1,4 @@
-import {Cosmetic} from '@/types/Cosmetic';
+import {Cosmetic, SkinType} from '@/types/Cosmetic';
 import databaseRaw from '../data/database.json';
 
 const database: Cosmetic[] = databaseRaw as Cosmetic[];
@@ -26,11 +26,9 @@ export const getCosmeticsByBrand = (brand: string): Cosmetic[] => {
   );
 };
 
-export const getCosmeticBySkinType = (skinType: string): Cosmetic[] => {
+export const getCosmeticBySkinType = (skinType: SkinType): Cosmetic[] => {
   const cosmetics = database;
-  return cosmetics.filter(
-    cosmetic => cosmetic.Skin_Type.toLowerCase() === skinType.toLowerCase(),
-  );
+  return cosmetics.filter(cosmetic => cosmetic.Skin_Type === skinType);
 };
 
 export const getCosmeticByCountry = (country: string): Cosmetic[] => {

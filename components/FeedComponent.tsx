@@ -13,7 +13,7 @@ export const FeedComponent = (props: FeedComponentProps) => {
       <View style={styles.container}>
         {/* TODO: Add image */}
         <View style={styles.placeholder} />
-        <View style={{paddingHorizontal: 10}}>
+        <View style={styles.textContainer}>
           <Text numberOfLines={1}>{props.cosmetic.Product_Name}</Text>
           <Text numberOfLines={1}>{props.cosmetic.Brand}</Text>
         </View>
@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   container: {
-    flexDirection: 'column',
     height: 180,
     width: 130,
     borderRadius: 15,
@@ -50,5 +49,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
     alignItems: 'center',
     paddingTop: 10,
+  },
+  textContainer: {
+    paddingHorizontal: 10,
   },
 });

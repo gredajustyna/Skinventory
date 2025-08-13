@@ -24,6 +24,8 @@ export type CosmeticCategory =
   | 'Serum'
   | 'Setting Spray';
 
+export type SkinType = 'Normal' | 'Dry' | 'Oily' | 'Combination' | 'Sensitive';
+
 export type Cosmetic = {
   Product_Name: string;
   Brand: string;
@@ -33,7 +35,7 @@ export type Cosmetic = {
   Rating: number;
   Number_of_Reviews: number;
   Product_Size: string;
-  Skin_Type: 'Normal' | 'Dry' | 'Oily' | 'Combination' | 'Sensitive';
+  Skin_Type: SkinType;
   Gender_Target: 'Female' | 'Male' | 'Unisex';
   Packaging_Type: string;
   Main_Ingredient: string;
