@@ -24,15 +24,7 @@ export default function App() {
           headerShown: false,
         }}>
         <Stack.Screen name="TabNavigator" component={Tabs} />
-        <Stack.Screen
-          name="ProductScreen"
-          component={ProductScreen}
-          options={{
-            headerShown: true,
-            headerTitle: 'Product Details',
-            headerBackTitle: 'Back',
-          }}
-        />
+        <Stack.Screen name="ProductScreen" component={ProductScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
