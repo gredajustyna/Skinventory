@@ -1,156 +1,29 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen} from './screens/HomeScreen';
-import {ProfileScreen} from './screens/ProfileScreen';
-import {RoutineScreen} from './screens/RoutineScreen';
-import {SearchScreen} from './screens/SearchScreen';
-import {ShelfScreen} from './screens/ShelfScreen';
 import {NavigationContainer} from '@react-navigation/native';
-import {Colors} from './constants/Colors';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import {IconName, StyledIcon} from './components/CustomIcon';
-import type {TouchableOpacityProps} from 'react-native';
 import '@/i18n';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const Tab = createBottomTabNavigator();
+import {Tabs} from './navigation/Tabs';
+import {ProductScreen} from './screens/ProductScreen';
 
-interface RoutineButtonProps {
-  children: React.ReactNode;
-  onPress?: TouchableOpacityProps['onPress'];
-}
-
-const RoutineButton: React.FC<RoutineButtonProps> = ({children, onPress}) => {
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
-        top: -20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        ...styles.shadow,
-      }}>
-      <View
-        style={{
-          width: 70,
-          height: 70,
-          borderRadius: 35,
-          backgroundColor: Colors.accent,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        {children}
-      </View>
-    </TouchableOpacity>
-  );
+export type RootStackParamList = {
+  TabNavigator: undefined;
+  ProductScreen: {
+    id: number;
+  };
 };
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
+      <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          tabBarActiveTintColor: Colors.accent,
-          tabBarInactiveTintColor: Colors.background,
-          tabBarShowLabel: false,
-          tabBarStyle: {
-            position: 'absolute',
-            bottom: 25,
-            left: 20,
-            right: 20,
-            height: 70,
-            marginRight: 20,
-            marginLeft: 20,
-            paddingTop: 15,
-            backgroundColor: Colors.primary,
-            borderRadius: 15,
-            ...styles.shadow,
-          },
         }}>
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            tabBarIcon: ({color}) => (
-              <StyledIcon
-                name={IconName.Home}
-                color={color}
-                width={30}
-                height={30}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Search"
-          component={SearchScreen}
-          options={{
-            tabBarIcon: ({color}) => (
-              <StyledIcon
-                name={IconName.Search}
-                color={color}
-                width={30}
-                height={30}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Routine"
-          component={RoutineScreen}
-          options={{
-            tabBarIcon: ({color}) => (
-              <StyledIcon
-                name={IconName.Routine}
-                color={color}
-                width={30}
-                height={30}
-              />
-            ),
-            tabBarButton: props => <RoutineButton {...props} />,
-          }}
-        />
-        <Tab.Screen
-          name="Shelf"
-          component={ShelfScreen}
-          options={{
-            tabBarIcon: ({color}) => (
-              <StyledIcon
-                name={IconName.Shelf}
-                color={color}
-                width={30}
-                height={30}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Profile"
-          component={ProfileScreen}
-          options={{
-            tabBarIcon: ({color}) => (
-              <StyledIcon
-                name={IconName.Profile}
-                color={color}
-                width={30}
-                height={30}
-              />
-            ),
-          }}
-        />
-      </Tab.Navigator>
+        <Stack.Screen name="TabNavigator" component={Tabs} />
+        <Stack.Screen name="ProductScreen" component={ProductScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: Colors.text,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.5,
-    elevation: 5,
-  },
-});

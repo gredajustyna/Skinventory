@@ -1,5 +1,8 @@
+import {RootStackParamList} from '@/App';
 import {Colors} from '@/constants/Colors';
 import {Cosmetic} from '@/types/Cosmetic';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 
@@ -8,8 +11,14 @@ export interface FeedComponentProps {
 }
 
 export const FeedComponent = (props: FeedComponentProps) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
   return (
-    <TouchableOpacity style={styles.shadow}>
+    <TouchableOpacity
+      style={styles.shadow}
+      onPress={() =>
+        navigation.navigate('ProductScreen', {id: props.cosmetic.id})
+      }>
       <View style={styles.container}>
         {/* TODO: Add image */}
         <View style={styles.placeholder} />
