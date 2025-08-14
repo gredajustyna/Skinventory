@@ -12,5 +12,37 @@
     "combination": "Combination",
     "sensitive": "Sensitive",
     "normal": "Normal"
+  },
+  "cosmeticCategories": {
+    "bbcream": "BB Cream",
+    "blush": "Blush",
+    "bronzer": "Bronzer",
+    "cccream": "CC Cream",
+    "cleanser": "Cleanser",
+    "concealer": "Concealer",
+    "contour": "Contour",
+    "exfoliator": "Exfoliator",
+    "eyeshadow": "Eye Shadow",
+    "eyeliner": "Eyeliner",
+    "facemask": "Face Mask",
+    "faceoil": "Face Oil",
+    "foundation": "Foundation",
+    "highlighter": "Highlighter",
+    "lipgloss": "Lip Gloss",
+    "lipliner": "Lip Liner",
+    "lipstick": "Lipstick",
+    "makeupremover": "Makeup Remover",
+    "mascara": "Mascara",
+    "moisturizer": "Moisturizer",
+    "powder": "Powder",
+    "primer": "Primer",
+    "serum": "Serum",
+    "settingspray": "Setting Spray"
+  },
+  "usageFrequencies": {
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "occasional": "Occasional"
   }
 }
