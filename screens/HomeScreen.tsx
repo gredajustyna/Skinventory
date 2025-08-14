@@ -1,11 +1,7 @@
 import {RecommendationsRow} from '@/components/feed/RecommendationsRow';
-import {FeedComponent} from '@/components/FeedComponent';
-import {ROUTINE} from '@/mocks/routineData';
 import {USER} from '@/mocks/userData';
-import {getRecommendationsBySkinType} from '@/utils/feed/getRecommendationsBySkinType';
-import {getRandomNumber} from '@/utils/getRandomNumber';
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, FlatList} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 export const HomeScreen = () => {

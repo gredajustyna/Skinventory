@@ -1,5 +1,4 @@
-import {USER} from '@/mocks/userData';
-import {Cosmetic, SkinType} from '@/types/Cosmetic';
+import {SkinType} from '@/types/Cosmetic';
 import {getRecommendationsBySkinType} from '@/utils/feed/getRecommendationsBySkinType';
 import React from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
