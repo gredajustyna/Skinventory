@@ -5,5 +5,12 @@
     "brandRecommendation": "Because you like: ",
     "skinTypeRecommendation": "For your skin type: ",
     "veganRecommendation": "For animal lovers:"
+  },
+  "skinTypes": {
+    "oily": "Oily",
+    "dry": "Dry",
+    "combination": "Combination",
+    "sensitive": "Sensitive",
+    "normal": "Normal"
   }
 }
