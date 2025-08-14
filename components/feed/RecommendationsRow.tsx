@@ -6,6 +6,8 @@ import {FeedComponent} from '../FeedComponent';
 import {getVeganRecommendations} from '@/utils/feed/getVeganRecommendations';
 import {getFavoriteBrand} from '@/utils/getFavoriteBrand';
 import {getRecommendationsByBrand} from '@/utils/feed/getRecommendationsByBrand';
+import {useTranslation} from 'react-i18next';
+import {useLocalizeSkinType} from '@/i18n/hooks/useLocalizeSkinType';
 
 interface RecommendationsRowProps {
   type: 'Vegan' | 'SkinType' | 'Brand';
@@ -13,13 +15,15 @@ interface RecommendationsRowProps {
 }
 
 export const RecommendationsRow = (props: RecommendationsRowProps) => {
+  const {t} = useTranslation();
+  const skinType = useLocalizeSkinType(props.skinType ?? 'Normal');
   return (
     <>
       {props.type === 'SkinType' && props.skinType && (
         <View>
           <Text style={styles.titleText}>
-            For your skin type:{' '}
-            <Text style={{fontWeight: 'bold'}}>{props.skinType}</Text>
+            {t('feed.skinTypeRecommendation')}
+            <Text style={{fontWeight: 'bold'}}>{skinType}</Text>
           </Text>
           <FlatList
             contentContainerStyle={{gap: 15, paddingVertical: 15}}
@@ -32,7 +36,7 @@ export const RecommendationsRow = (props: RecommendationsRowProps) => {
       )}
       {props.type === 'Vegan' && (
         <View>
-          <Text style={styles.titleText}>For animal lovers:</Text>
+          <Text style={styles.titleText}>{t('feed.veganRecommendation')}</Text>
           <FlatList
             contentContainerStyle={{gap: 15, paddingVertical: 15}}
             data={getVeganRecommendations()}
@@ -45,7 +49,7 @@ export const RecommendationsRow = (props: RecommendationsRowProps) => {
       {props.type === 'Brand' && (
         <View>
           <Text style={styles.titleText}>
-            Because you like:{' '}
+            {t('feed.brandRecommendation')}
             <Text style={{fontWeight: 'bold'}}>{getFavoriteBrand()}</Text>
           </Text>
           <FlatList
