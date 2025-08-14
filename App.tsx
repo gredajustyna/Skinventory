@@ -7,7 +7,14 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {Tabs} from './navigation/Tabs';
 import {ProductScreen} from './screens/ProductScreen';
 
-const Stack = createStackNavigator();
+export type RootStackParamList = {
+  TabNavigator: undefined;
+  ProductScreen: {
+    id: number;
+  };
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
@@ -18,7 +25,7 @@ export default function App() {
         }}>
         <Stack.Screen name="TabNavigator" component={Tabs} />
         <Stack.Screen
-          name="ProductPage"
+          name="ProductScreen"
           component={ProductScreen}
           options={{
             headerShown: true,
