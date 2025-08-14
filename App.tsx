@@ -9,6 +9,7 @@ import {Colors} from './constants/Colors';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {IconName, StyledIcon} from './components/CustomIcon';
 import type {TouchableOpacityProps} from 'react-native';
+import '@/i18n';
 
 const Tab = createBottomTabNavigator();
 

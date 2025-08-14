@@ -1,0 +1,9 @@
+{
+  "feed": {
+    "greeting": "Hello,",
+    "discover": "Discover new products:",
+    "brandRecommendation": "Because you like: ",
+    "skinTypeRecommendation": "For your skin type: ",
+    "veganRecommendation": "For animal lovers:"
+  }
+}
