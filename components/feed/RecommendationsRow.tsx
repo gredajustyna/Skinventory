@@ -16,15 +16,14 @@ interface RecommendationsRowProps {
 
 export const RecommendationsRow = (props: RecommendationsRowProps) => {
   const {t} = useTranslation();
+  const skinType = useLocalizeSkinType(props.skinType ?? 'Normal');
   return (
     <>
       {props.type === 'SkinType' && props.skinType && (
         <View>
           <Text style={styles.titleText}>
             {t('feed.skinTypeRecommendation')}
-            <Text style={{fontWeight: 'bold'}}>
-              {useLocalizeSkinType(props.skinType)}
-            </Text>
+            <Text style={{fontWeight: 'bold'}}>{skinType}</Text>
           </Text>
           <FlatList
             contentContainerStyle={{gap: 15, paddingVertical: 15}}
