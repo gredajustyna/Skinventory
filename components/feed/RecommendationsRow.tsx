@@ -7,7 +7,7 @@ import {getVeganRecommendations} from '@/utils/feed/getVeganRecommendations';
 import {getFavoriteBrand} from '@/utils/getFavoriteBrand';
 import {getRecommendationsByBrand} from '@/utils/feed/getRecommendationsByBrand';
 import {useTranslation} from 'react-i18next';
-import {localizeSkinType} from '@/i18n/utils/localizeSkinType';
+import {useLocalizeSkinType} from '@/i18n/hooks/useLocalizeSkinType';
 
 interface RecommendationsRowProps {
   type: 'Vegan' | 'SkinType' | 'Brand';
@@ -23,7 +23,7 @@ export const RecommendationsRow = (props: RecommendationsRowProps) => {
           <Text style={styles.titleText}>
             {t('feed.skinTypeRecommendation')}
             <Text style={{fontWeight: 'bold'}}>
-              {localizeSkinType(props.skinType)}
+              {useLocalizeSkinType(props.skinType)}
             </Text>
           </Text>
           <FlatList
