@@ -1,6 +1,4 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {Colors} from './constants/Colors';
-import {StyleSheet} from 'react-native';
 import '@/i18n';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -29,16 +27,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: Colors.text,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.5,
-    elevation: 5,
-  },
-});

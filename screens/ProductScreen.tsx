@@ -56,16 +56,6 @@ export const ProductScreen = ({route}: {route: ProductScreenRouteProp}) => {
 };
 
 const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: Colors.text,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.5,
-    shadowRadius: 3.5,
-    elevation: 5,
-  },
   placeholder: {
     width: Dimensions.get('window').width - 32,
     height: Dimensions.get('window').width - 32,
