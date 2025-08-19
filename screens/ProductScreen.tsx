@@ -3,6 +3,7 @@ import {RootStackParamList} from '@/App';
 import {AddToRoutineButton} from '@/components/AddToRoutineButton';
 import {AddToShelfButton} from '@/components/AddToShelfButton';
 import {IconName, StyledIcon} from '@/components/CustomIcon';
+import {VeganBadge} from '@/components/product/VeganBadge';
 import {Colors} from '@/constants/Colors';
 import {RouteProp, useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -53,6 +54,7 @@ export const ProductScreen = ({route}: {route: ProductScreenRouteProp}) => {
           <View style={styles.routineButton}>
             <AddToRoutineButton />
             <AddToShelfButton />
+            {cosmetic.Cruelty_Free && <VeganBadge />}
           </View>
           <Text>{loremIpsum({p: 2})}</Text>
         </View>

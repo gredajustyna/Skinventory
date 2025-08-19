@@ -5,6 +5,7 @@ import HomeSvg from '../assets/icons/home-sharp.svg';
 import ProfileSvg from '../assets/icons/person-circle-outline.svg';
 import SearchSvg from '../assets/icons/search-sharp.svg';
 import BackSvg from '../assets/icons/arrow-left-drop-circle-outline.svg';
+import AnimalsSvg from '../assets/icons/animals.svg';
 import {SvgProps} from 'react-native-svg';
 import {ViewStyle} from 'react-native';
 
@@ -15,6 +16,7 @@ export enum IconName {
   Shelf = 'Shelf',
   Profile = 'Profile',
   Back = 'Back',
+  Animals = 'Animals',
 }
 
 interface StyledIconProps extends SvgProps {
@@ -30,6 +32,7 @@ export const StyledIcon = ({name, color, ...props}: StyledIconProps) => {
     [IconName.Shelf]: ShelfSvg,
     [IconName.Profile]: ProfileSvg,
     [IconName.Back]: BackSvg,
+    [IconName.Animals]: AnimalsSvg,
   };
 
   const IconComponent = iconMap[name];
