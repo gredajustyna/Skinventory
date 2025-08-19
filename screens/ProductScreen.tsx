@@ -1,5 +1,7 @@
 import {getCosmeticById} from '@/api/api';
 import {RootStackParamList} from '@/App';
+import {AddToRoutineButton} from '@/components/AddToRoutineButton';
+import {AddToShelfButton} from '@/components/AddToShelfButton';
 import {IconName, StyledIcon} from '@/components/CustomIcon';
 import {Colors} from '@/constants/Colors';
 import {RouteProp, useNavigation} from '@react-navigation/native';
@@ -48,6 +50,10 @@ export const ProductScreen = ({route}: {route: ProductScreenRouteProp}) => {
         <View>
           <Text style={styles.nameText}>{cosmetic.Product_Name}</Text>
           <Text style={styles.brandText}>{cosmetic.Brand}</Text>
+          <View style={styles.routineButton}>
+            <AddToRoutineButton />
+            <AddToShelfButton />
+          </View>
           <Text>{loremIpsum({p: 2})}</Text>
         </View>
       </ScrollView>
@@ -76,7 +82,7 @@ const styles = StyleSheet.create({
   brandText: {
     fontSize: 20,
     color: Colors.textGray,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   backButton: {
     padding: 10,
@@ -86,5 +92,9 @@ const styles = StyleSheet.create({
     width: 50,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  routineButton: {
+    marginBottom: 20,
+    gap: 10,
   },
 });

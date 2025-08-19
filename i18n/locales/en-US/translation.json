@@ -44,5 +44,11 @@
     "weekly": "Weekly",
     "monthly": "Monthly",
     "occasional": "Occasional"
+  },
+  "productScreen": {
+    "addToRoutine": "Add to Routine",
+    "addToShelf": "Add to Shelf",
+    "inRoutine": "In Routine",
+    "inShelf": "In Shelf"
   }
 }
